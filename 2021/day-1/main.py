@@ -4,11 +4,11 @@ def part_one(input):
     depthIncreasedCount = 0
     for measurement in input.readlines():
         if (int(measurement) > previousMeasurement):
-            depthIncreasedCount = depthIncreasedCount + 1
+            depthIncreasedCount += 1
         
         previousMeasurement = int(measurement)
     
-    print("Part one: Depth increased " + str(depthIncreasedCount) + " times.")
+    print("Part one: Depth increased {} times.".format(depthIncreasedCount))
 
 
 def part_two(input):
@@ -17,20 +17,19 @@ def part_two(input):
     groupedMeasurements = []
     for i in range(len(measurements) - 2):
         groupedMeasurement = sum(measurements[i:i + 3])
-        print(groupedMeasurement)
         groupedMeasurements.append(groupedMeasurement)
-        i = i + 1
+        i += 1
 
     previousMeasurement = groupedMeasurements.pop(0);
     
     depthIncreasedCount = 0
     for measurement in groupedMeasurements:
         if (int(measurement) > previousMeasurement):
-            depthIncreasedCount = depthIncreasedCount + 1
+            depthIncreasedCount += 1
         
         previousMeasurement = int(measurement)
     
-    print("Part two: Depth increased " + str(depthIncreasedCount) + " times.")
+    print("Part two: Depth increased {} times.".format(depthIncreasedCount))
 
 
 def main():
